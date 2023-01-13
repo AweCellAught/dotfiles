@@ -1191,16 +1191,12 @@ main = do
                spawnOnce "blueman-applet"
                spawnOnce "/usr/local/bin/blueman-start"
                spawnOnce "xfce4-clipman"
-               spawnOnce "exec /usr/bin/apt-notifier"
                spawnOnce "nm-applet"
                spawnOnce "xfce4-notes"
                spawnOnce "system-config-printer-applet"
                spawnOnce "start-pulseaudio-x11"
-               spawnOnce "restore-software-brightness"
-               spawnOnce "light-locker"
-               spawnOnce "\"/usr/bin/startupsound-mx"
                spawnOnce
-                 "sh -c 'xrandr --output HDMI-1 --mode 1920x1080 --rate 60.00 --output eDP-1 --mode 1600x900 --rate 59.95 --right-of HDMI-1'"
+                 "sh -c 'xrandr --output HDMI-0 --auto --primary --output VGA-0 --auto --right-of HDMI-0'"
                spawnOnce "volumeicon"
         , handleEventHook =
             swallowEventHookSub (className =? "Kitty") (pure True) <+>
