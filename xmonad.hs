@@ -360,7 +360,6 @@ keyBindings :: XConfig Layout -> M.Map (KeyMask, KeySym) (X ())
 keyBindings XConfig {..} =
   M.fromList $
         -- ||| KILL COMMANDS |||
-    -- ((modMask, xK_KP_Divide), initiateCommandSequence) -- Initiate command sequence
   [ ((modMask .|. shiftMask .|. controlMask, xK_minus), kill) -- Closes all copies of currently focused window, and only of that window.
   , ((modMask .|. shiftMask .|. altMask, xK_minus), killAll) --- Closes all windows on current workspace; only those windows, and only those copies.
   , ((modMask .|. shiftMask, xK_minus), kill1) ----------------- Closes currently focused copy of window, and only that copy.
@@ -545,7 +544,7 @@ keyBindings XConfig {..} =
       , ((modMask .|. altMask, xK_Tab), prevScreen >> warpToCenter >> up)
       ]
     layoutKeys
-             -- ||| FOCUS; LAYOUT, SPACING, ROTATION, ETC. |||
+             -- | FOCUS; LAYOUT, SPACING, ROTATION, ETC.
      =
       windowKeysFocusMoveEtc ++
       layoutAlgorithmKeys ++
