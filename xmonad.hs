@@ -50,7 +50,7 @@ https://hackage.haskell.org/package/extra-1.7.14/docs/src/Data.List.Extra.html#z
 {-# OPTIONS_GHC -threaded #-}
 
 module Main
-  ( main,
+  ( main
   )
 where
 
